@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Pokernow Finder",
+    "version": "1.0",
+    "description": "Automatically finds a specific element in Pokernow.com tables",
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "debugger"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_icon": "105751.png"
+    },
+    "web_accessible_resources": [
+        "notification.mp3"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.pokernow.club/*"
+            ],
+            "js": [
+                "contentScript.js",
+                "popup.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
